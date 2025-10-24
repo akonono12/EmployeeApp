@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label>First name</label>
+    <input type="text" formControlName="firstname" />
+    <small *ngIf="form.controls['firstname'].touched && form.controls['firstname'].invalid">
+      First name is required (min 2 chars).
+    </small>
+  </div>
+
+  <div>
+    <label>Last name</label>
+    <input type="text" formControlName="lastname" />
+    <small *ngIf="form.controls['lastname'].touched && form.controls['lastname'].invalid">
+      Last name is required (min 2 chars).
+    </small>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Save</button>
+  <button type="button" (click)="reset()">Reset</button>
+</form>

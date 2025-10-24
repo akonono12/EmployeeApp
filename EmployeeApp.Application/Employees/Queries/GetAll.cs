@@ -19,9 +19,9 @@ namespace EmployeeApp.Application.Employees.Queries
         {
             _employeeRepository = employeeRepository;
         }
-        public Task<List<Employee>> Handle(GetAll request, CancellationToken cancellationToken)
+        public async Task<List<Employee>> Handle(GetAll request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return await _employeeRepository.GetAll();
         }
     }
 }

@@ -1,0 +1,12 @@
+<h2>Employee Management</h2>
+
+<app-employee-form
+  [employee]="selected"
+  (save)="onSave($event)">
+</app-employee-form>
+
+<app-employee-table
+  [employees]="employees"
+  (edit)="onEdit($event)"
+  (remove)="onDelete($event)">
+</app-employee-table>

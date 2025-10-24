@@ -1,0 +1,20 @@
+<table *ngIf="employees.length > 0">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let e of employees">
+      <td>{{ e.firstname }}</td>
+      <td>{{ e.lastname }}</td>
+      <td>
+        <button (click)="edit.emit(e)">Edit</button>
+        <button (click)="remove.emit(e.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="employees.length === 0">No employees found.</p>
